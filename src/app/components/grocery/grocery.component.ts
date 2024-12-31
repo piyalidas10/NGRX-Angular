@@ -4,6 +4,7 @@ import { Grocery } from '../../models/grocery.model';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { addToBucket, removeFromBucket } from '../../store/actions/bucket.action';
+import { selectGroceries, selectGroceriesByType } from '../../store/selectors/grocery.selectors';
 
 
 @Component({
@@ -16,12 +17,22 @@ import { addToBucket, removeFromBucket } from '../../store/actions/bucket.action
 export class GroceryComponent {
 
   groceries$?: Observable<Grocery[]>;
+  filteredGroceries$?: Observable<Grocery[]>;
 
   constructor(private store: Store<{ groceries: Grocery[] }>) {
-    this.groceries$ = this.store.select('groceries');
+    // this.groceries$ = this.store.select('groceries'); direct from store
+    this.groceries$ = this.store.select(selectGroceries);
+    
+    // only show Fruit type groceries
+    // this.groceries$ = this.store.select(selectGroceriesByTypeFruit);
   }
   onTypeChange(event: Event) {
-
+    const selectedType = (event.target as HTMLSelectElement).value;
+    if (selectedType) {
+      this.filteredGroceries$ = this.store.select(selectGroceriesByType(selectedType));
+    } else {
+      this.filteredGroceries$ = undefined;
+    }
   }
   increment(item: Grocery) {
     const payload = {

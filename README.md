@@ -5,6 +5,9 @@
 3. Reducer will return data to the store / state which is new state.
 4. Component directly consume data from store
 
+##### Selectors
+Selectors are MemoizedSelectors, call only one time in entire application
+
 Stackbliz Link: https://stackblitz.com/~/github.com/piyalidas10/Redux-Angular
 
 ### Angular 18 state management using NGRX - Store, Reducer, Effects, Selectors | NgRx tutorial in Hindi

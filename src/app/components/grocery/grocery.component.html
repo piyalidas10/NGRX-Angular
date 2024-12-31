@@ -4,9 +4,10 @@
         <option value="">Select type</option>
         <option value="fruit">Fruit</option>
         <option value="snacks">Snacks</option>
+        <option value="dairy">Dailry</option>
     </select>
     <ul class="grocery-list">
-        @for(groc of groceries$ | async; track groc.id) {
+        @for(groc of (filteredGroceries$ | async)?? (groceries$ | async); track groc.id) {
           <li class="grocery-item">
             <span class="increment-button" (click)="increment(groc)">+</span>
             {{ groc.name }}
