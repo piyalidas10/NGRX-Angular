@@ -9,6 +9,6 @@ export class GroceryService {
   constructor(private http:HttpClient) {}
 
   fetchAllGroceries(){
-    return this.http.get("http://localhost:5000/groceries")
+    return this.http.get("https://raw.githubusercontent.com/piyalidas10/NGRX-Angular/refs/heads/main/groceries.json");
   }
 }
