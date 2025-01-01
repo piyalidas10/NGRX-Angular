@@ -22,6 +22,7 @@ export class GroceryComponent {
   constructor(private store: Store<{ groceries: Grocery[] }>) {
     // this.groceries$ = this.store.select('groceries'); direct from store
     this.groceries$ = this.store.select(selectGroceries);
+    console.log('groceries$ => ', this.groceries$);
     
     // only show Fruit type groceries
     // this.groceries$ = this.store.select(selectGroceriesByTypeFruit);
