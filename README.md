@@ -10,7 +10,7 @@
 ##### Selectors
 Selectors are MemoizedSelectors, call only one time in entire application
 
-Stackbliz Link: https://stackblitz.com/~/github.com/piyalidas10/Redux-Angular
+Stackbliz Link: https://stackblitz.com/~/github.com/piyalidas10/NGRX-Angular
 
 ### Angular 18 state management using NGRX - Store, Reducer, Effects, Selectors | NgRx tutorial in Hindi
 https://www.youtube.com/watch?v=PvL7TULFxoE
