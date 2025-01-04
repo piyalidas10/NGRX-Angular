@@ -1,4 +1,4 @@
-# NGRX Pattern (component -> Actions -> Effects -> Reducers -> Store -> Selectors -> Component)
+# Angular 18 NGRX Pattern (component -> Actions -> Effects -> Reducers -> Store -> Selectors -> Component)
 ![NGRX Pattern](https://github.com/piyalidas10/NGRX-Angular/blob/777c4534582a602a4329961fd343fe3438c35bea/NGRX.png)
 1. Component dispatch the action. Action is nothing than an object with type & payload.
 2. Action will reach to effects. In Previous Redux pattern, we were sending actions directly to reducers which is synchronous. Now if you want to invoke the APIs which will be performed inside effects. 
